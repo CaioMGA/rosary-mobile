@@ -95,3 +95,8 @@ function hideMenu() {
     var menu = document.getElementById("overlay-menu");
     menu.classList.add("hidden");
 }
+
+function openLink(url) {
+    window.open(url, '_blank').focus();
+
+}
