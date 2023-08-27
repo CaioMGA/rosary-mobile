@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8">
+    <head>
+        <title>Reze o terço do dia.</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Aboreto&family=Comfortaa:wght@300&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="style.css"/>
+        <script src="app.js"></script>
+    </head>
+    <body onload="LoadPage();">
+        <div id="header">
+            <p></p><!-- spacer -->
+            <h1 id="page-title">Terço do dia</h1>
+            <input type="button" value="Menu" class="menu-button" onclick="showMenu()">
+        </div>
+        <iframe id="video-iframe" src=""  title="Reze o Santo Terço" frameborder="0" autoplay="true" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <div id="overlay-menu" class="hidden">
+            <input type="button" class="menu-button" value="Terço do dia" onclick="SelectMysteryOfTheDay()">
+            <input type="button" class="menu-button" value="Gozosos" onclick="SelectMystery(1)">
+            <input type="button" class="menu-button" value="Dolorosos" onclick="SelectMystery(2)">
+            <input type="button" class="menu-button" value="Gloriosos" onclick="SelectMystery(3)">
+            <input type="button" class="menu-button" value="Luminosos" onclick="SelectMystery(4)">
+            <input type="button" class="menu-button"value="Fechar" onclick="hideMenu()">
+
+             <div id="interesting-links">
+            <ul>
+                <li><a href="https://padrepauloricardo.org/" target="blank_">Site Padre Paulo</a></li>
+                <li><a href="https://www.vatican.va/special/rosary/index_rosary_po.htm" target="blank_">O Santo Rosário</a></li>
+                <li><a href="https://www.vatican.va/special/rosary/documents/misteri_po.html" target="blank_">Os Mistérios do Rosário</a></li>
+                <li><a href="https://www.amazon.com.br/Champions-Rosary-History-Spiritual-English-ebook/dp/B06X9NKYW6?&linkCode=ll1&tag=fazueliproduc-20&linkId=36a7a0bd47d149f7a553a374618bd404&language=pt_BR&ref_=as_li_ss_tl" target="blank_">Champions of the Rosary (kindle)</a></li>
+                <li><a href="https://www.amazon.com.br/Champions-Rosary-History-Heroes-Spiritual/dp/1596143436?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=1O6A6GZBDJV02&keywords=rosario+donald+calloway&qid=1675222799&sprefix=ros%C3%A1rio+donald+calloway%2Caps%2C200&sr=8-4&linkCode=ll1&tag=fazueliproduc-20&linkId=4a058a4646dadc2b643c7fd24c6cdd86&language=pt_BR&ref_=as_li_ss_tl" target="blank_">Champions of the Rosary (físico)</a></li>
+            </ul>
+        </div>
+        </div>
+    </body>
+</html>
