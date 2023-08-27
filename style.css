@@ -1,21 +1,28 @@
 html{
     margin:0;
+    padding: 0;
 }
 
 body {
-    display:flex;
+    display: flex;
+    position: fixed;
     flex-direction: column;
-    justify-content: normal;
+    justify-content: start;
     align-items: center;
     height:100vh;
     width:100vw;
     margin:0;
+    padding: 0;
     background-color: blanchedalmond;
 }
 
-h1, h2, h3{
+h1, h2, h3, h4{
     font-family: 'Aboreto', cursive;
     text-align: center;
+}
+
+p {
+    font-family: 'Comfortaa', cursive;
 }
 
 .hidden {
@@ -40,6 +47,7 @@ h1, h2, h3{
     justify-content: space-between;
     align-items: center;
     width: 100vw;
+    height:5vh;
 }
 
 #overlay-menu {
@@ -58,5 +66,22 @@ h1, h2, h3{
 }
 
 #page-title{
+    font-family: 'Aboreto', cursive;
+}
+
+#top {
+    height:auto;
+    top:0;
+}
+
+#mysteries-descriptions {
+    padding: 40px;
+    padding-bottom: 200px;
+    height: 62%;
+    overflow-y: auto;
+}
+
+.mystery-title {
+    font-weight: bold;
     font-family: 'Aboreto', cursive;
 }

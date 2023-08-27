@@ -11,6 +11,12 @@ function LoadPage() {
     SelectMysteryOfTheDay();
 }
 
+function loadJson(jsonName, callback) {
+    fetch('./descriptions/' + jsonName + '.json')
+        .then((response) => response.json())
+        .then((json) => callback(json));
+}
+
 function UpdatePageTitle(weekDay, mysteryOfTheDay = false) {
     // gozosos = seg e sab
     // dolorosos = ter e sex
@@ -69,11 +75,29 @@ function GetMysteryByWeekday(weekDay) {
     }
 }
 
+function GetMysteryDescriptionsByWeekday(weekDay) {
+    switch (weekDay) {
+        case 1: //seg
+        case 6: //sab
+            return loadJson("joyful-mysteries", UpdateDescriptions);
+        case 2: //ter 
+        case 5: //sex
+            return loadJson("sorrowful-mysteries", UpdateDescriptions);
+        case 3: //qua
+        case 0: //dom
+            return loadJson("glorious-mysteries", UpdateDescriptions);
+        case 4: //qui
+        default:
+            return loadJson("luminous-mysteries", UpdateDescriptions);
+    }
+}
+
 function SelectMystery(weekDay) {
     console.log(weekDay);
     UpdatePageTitle(weekDay);
     var url = baseUrl + GetMysteryByWeekday(weekDay);
     document.getElementById('video-iframe').src = url;
+    GetMysteryDescriptionsByWeekday(weekDay);
     hideMenu();
 }
 
@@ -82,6 +106,7 @@ function SelectMysteryOfTheDay() {
     console.log(weekDay);
     UpdatePageTitle(weekDay, true);
     var url = baseUrl + GetCurrentMysteryCode();
+    GetMysteryDescriptionsByWeekday(weekDay);
     document.getElementById('video-iframe').src = url;
     hideMenu();
 }
@@ -99,4 +124,18 @@ function hideMenu() {
 function openLink(url) {
     window.open(url, '_blank').focus();
 
+}
+
+function UpdateDescriptions(data) {
+    console.log(data);
+    var desc = document.getElementById("mysteries-descriptions");
+    desc.innerHTML = "<h1>" + data.name + "</h1>";
+    let i = 1;
+    data.mysteries.forEach(m => {
+        desc.innerHTML += '<p class="mystery-title">' + i + 'º ' + data.prefix + ': ' + m.title + '</p>';
+        desc.innerHTML += "<p>" + m.description + "</p>";
+        desc.innerHTML += "<br>"
+        i++;
+    });
+    desc.scrollTop = 0;
 }

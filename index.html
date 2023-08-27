@@ -10,12 +10,15 @@
         <script src="app.js"></script>
     </head>
     <body onload="LoadPage();">
-        <div id="header">
-            <p></p><!-- spacer -->
-            <h1 id="page-title">Terço do dia</h1>
-            <input type="button" value="Menu" class="menu-button" onclick="showMenu()">
+        <div id="top">
+            <div id="header">
+                <p></p><!-- spacer -->
+                <h1 id="page-title">Terço do dia</h1>
+                <input type="button" value="Menu" class="menu-button" onclick="showMenu()">
+            </div>
+            <iframe id="video-iframe" src=""  title="Reze o Santo Terço" frameborder="0" autoplay="true" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
-        <iframe id="video-iframe" src=""  title="Reze o Santo Terço" frameborder="0" autoplay="true" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <div id="mysteries-descriptions"></div>
         <div id="overlay-menu" class="hidden">
             <input type="button" class="menu-button" value="Mistérios do Dia de Hoje" onclick="SelectMysteryOfTheDay()">
             <input type="button" class="menu-button" value="Mistérios Gozosos" onclick="SelectMystery(1)">
