@@ -23,28 +23,28 @@ function UpdatePageTitle(weekDay, mysteryOfTheDay = false) {
     // gloriosos = qua e dom
     // luminosos = qui
 
-    if (mysteryOfTheDay) {
-        document.getElementById("page-title").innerText = "Terço do Dia:";
-    }
+    var titles = document.getElementsByClassName("page-title");
+    var txt = "";
 
     switch (weekDay) {
         case 1: //seg
         case 6: //sab
-            document.getElementById("page-title").innerText = mysteryOfTheDay ? "Terço do Dia: Mistérios Gozosos" : "Mistérios Gozosos";
+            txt = mysteryOfTheDay ? "Terço do Dia: Mistérios Gozosos" : "Mistérios Gozosos";
             break;
         case 2: //ter
         case 5: //sex
-            document.getElementById("page-title").innerText = mysteryOfTheDay ? "Terço do Dia: Mistérios Dolorosos" : "Mistérios Dolorosos";
+            txt = mysteryOfTheDay ? "Terço do Dia: Mistérios Dolorosos" : "Mistérios Dolorosos";
             break;
         case 3: //qua
         case 0: //dom
-            document.getElementById("page-title").innerText = mysteryOfTheDay ? "Terço do Dia: Mistérios Gloriosos" : "Mistérios Gloriosos";
+            txt = mysteryOfTheDay ? "Terço do Dia: Mistérios Gloriosos" : "Mistérios Gloriosos";
             break;
         case 4: //qui
         default:
-            document.getElementById("page-title").innerText = mysteryOfTheDay ? "Terço do Dia: Mistérios Luminosos" : "Mistérios Luminosos";
-            break;
+            txt = mysteryOfTheDay ? "Terço do Dia: Mistérios Luminosos" : "Mistérios Luminosos";
     }
+    titles[0].innerText = txt;
+    titles[1].innerText = txt;
 }
 
 function GetCurrentMysteryCode() {
@@ -96,7 +96,7 @@ function SelectMystery(weekDay) {
     console.log(weekDay);
     UpdatePageTitle(weekDay);
     var url = baseUrl + GetMysteryByWeekday(weekDay);
-    document.getElementById('video-iframe').src = url;
+    document.getElementsByClassName('video-iframe')[0].src = url;
     GetMysteryDescriptionsByWeekday(weekDay);
     hideMenu();
 }
@@ -107,7 +107,7 @@ function SelectMysteryOfTheDay() {
     UpdatePageTitle(weekDay, true);
     var url = baseUrl + GetCurrentMysteryCode();
     GetMysteryDescriptionsByWeekday(weekDay);
-    document.getElementById('video-iframe').src = url;
+    document.getElementsByClassName('video-iframe')[0].src = url;
     hideMenu();
 }
 
