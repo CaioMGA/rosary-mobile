@@ -88,6 +88,7 @@ p {
     bottom: 0;
     background-color: burlywood;
     width: 40vw;
+    height: auto;
     padding-top: 6vh;
 }
 .video-iframe {
