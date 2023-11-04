@@ -1,2 +1,2 @@
 # rosary-mobile
-mobile website to help people pray the Holy Rosary 
+website to help people pray the Holy Rosary 
