@@ -134,8 +134,16 @@ p {
     margin: 0.3em 1em;
 }
 
-.sourcecode-button{
-    right:0;
+.source{
+    text-decoration: none;
+    color: black;
+    font-family: 'Comfortaa', cursive;
+    font-size: small;
+    font-weight: 700;
+}
+
+.source:hover{
+    text-decoration: underline;
 }
 
 @media screen and (max-width: 768px){

@@ -1,6 +1,7 @@
 {
     "name": "Mistérios Gloriosos",
     "prefix": "Mistério Glorioso",
+    "source": "https://www.vatican.va/special/rosary/documents/misteri_gloriosi_po.html",
     "mysteries": [
         {
             "title": "Ressurreição de Jesus",

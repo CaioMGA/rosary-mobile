@@ -1,6 +1,7 @@
 {
     "name": "Mistérios Luminosos",
     "prefix": "Mistério Luminoso",
+    "source": "https://www.vatican.va/special/rosary/documents/misteri_luminosi_po.html",
     "mysteries": [
         {
             "title": "Batismo de Jesus no rio Jordão",

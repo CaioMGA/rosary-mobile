@@ -1,6 +1,7 @@
 {
     "name": "Mistérios Gozosos",
     "prefix": "Mistério Gozoso",
+    "source": "https://www.vatican.va/special/rosary/documents/misteri_gaudiosi_po.html",
     "mysteries": [
         {
             "title": "Anunciação a Maria",
