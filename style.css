@@ -126,6 +126,18 @@ p {
     visibility: visible;
 }
 
+.strong{
+    font-weight: 700;
+}
+
+.about-text{
+    margin: 0.3em 1em;
+}
+
+.sourcecode-button{
+    right:0;
+}
+
 @media screen and (max-width: 768px){
     .container-video {
         display: flex;
