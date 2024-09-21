@@ -1,66 +1,25 @@
 <!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <head>
-        <title>Reze o terço do dia.</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Aboreto&family=Comfortaa:wght@300&display=swap" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="style.css"/>
-        <script src="app.js"></script>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
     </head>
-    <body onload="LoadPage();">
-        <div class="container-video">
-            <div id="header" class="outer-header">
-                    <p></p><!-- spacer -->
-                    <h1 class="page-title">Terço do dia</h1>
-                    <input type="button" value="Menu" class="menu-button main-menu-button" onclick="showMenu()">
-                </div>
-            <div id="top">
-                <div id="header" class="inner-header">
-                    <p></p><!-- spacer -->
-                    <h1 class="page-title">Terço do dia</h1>
-                    <input type="button" value="Menu" class="menu-button main-menu-button" onclick="showMenu()">
-                </div>
-                <div>
-                <iframe class="video-iframe" src=""  title="Reze o Santo Terço" frameborder="0" autoplay="true" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                <div class="about">
-                    <div>
-
-                    </div>
-                </div>
-                </div>
-                
-            </div>
-            <div id="mysteries-descriptions"></div>
-        </div>
-        <div id="overlay-menu" class="hidden">
-            <input type="button" class="menu-button close-button"value="Fechar" onclick="hideMenu()">
-
-            <input type="button" class="menu-button" value="Abrir site v2" onclick="goToV2()">
-            <input type="button" class="menu-button" value="Mistérios do Dia de Hoje" onclick="SelectMysteryOfTheDay()">
-            <input type="button" class="menu-button" value="Mistérios Gozosos" onclick="SelectMystery(1)">
-            <input type="button" class="menu-button" value="Mistérios Dolorosos" onclick="SelectMystery(2)">
-            <input type="button" class="menu-button" value="Mistérios Gloriosos" onclick="SelectMystery(3)">
-            <input type="button" class="menu-button" value="Mistérios Luminosos" onclick="SelectMystery(4)">
-
-            <h2>Sobre</h2>
-
-            <p class="about-text">Site criado para auxiliar a contemplação dos Mistérios do Santo Rosário.</p>
-            <p class="about-text"><span class="strong">Seg e Sáb</span>: Mistérios Gozosos</p>
-            <p class="about-text"><span class="strong">Ter e Sex</span>: Mistérios Dolorosos</p>
-            <p class="about-text"><span class="strong">Qua e Dom</span>: Mistérios Gloriosos</p>
-            <p class="about-text"><span class="strong">Qui</span>: Mistérios Luminosos</p>
-
-            <h2>Links</h2>
-            <input type="button" class="link-button" value="Site Padre Paulo 🔗" onclick='openLink("https://padrepauloricardo.org/")'>
-            <input type="button" class="link-button" value="O Santo Rosário 🔗" onclick='openLink("https://www.vatican.va/special/rosary/index_rosary_po.htm")'>
-            <input type="button" class="link-button" value="Os Mistérios do Rosário 🔗" onclick='openLink("https://www.vatican.va/special/rosary/documents/misteri_po.html")'>
-            <input type="button" class="link-button" value="Champions of the Rosary (kindle) 🔗" onclick='openLink("https://www.amazon.com.br/Champions-Rosary-History-Spiritual-English-ebook/dp/B06X9NKYW6?&linkCode=ll1&tag=fazueliproduc-20&linkId=36a7a0bd47d149f7a553a374618bd404&language=pt_BR&ref_=as_li_ss_tl")'>
-            <input type="button" class="link-button" value="Champions of the Rosary (físico) 🔗" onclick='openLink("https://www.amazon.com.br/Champions-Rosary-History-Heroes-Spiritual/dp/1596143436?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=1O6A6GZBDJV02&keywords=rosario+donald+calloway&qid=1675222799&sprefix=ros%C3%A1rio+donald+calloway%2Caps%2C200&sr=8-4&linkCode=ll1&tag=fazueliproduc-20&linkId=4a058a4646dadc2b643c7fd24c6cdd86&language=pt_BR&ref_=as_li_ss_tl")'>
+    <body onload="solveVersion()">
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <h1>Carregando . . .</h1>
+        <script src="versionSelect.js" defer>
             
-            <input type="button" class="link-button" value="Código-fonte 🔗" onclick='openLink("https://github.com/CaioMGA/rosary-mobile/")'>
-        </div>
+
+        </script>
     </body>
 </html>

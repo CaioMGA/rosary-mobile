@@ -80,3 +80,4 @@ function showMysteryContent(){
     console.log("show mystery content");
     document.querySelector(".mystery-content").classList.remove("hidden");
 }
+
