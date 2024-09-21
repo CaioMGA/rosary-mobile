@@ -141,3 +141,7 @@ function UpdateDescriptions(data) {
     desc.scrollTop = 0;
 
 }
+
+function goToV2(){
+    window.location.href = '/v2';
+}
