@@ -1,146 +1,82 @@
 const baseUrl = "https://www.youtube.com/embed/";
+var selectedMystery = -1;
+var mysteryOfTheDay = -1;
 
-const mysteries = {
-    "joyful": "2BTDtzoidGc",
-    "sorrowful": "B9P1_jDdYgk",
-    "glorious": "uNsz-Frm2YI",
-    "luminous": "qw8HVkFqWt8"
-};
+const mysteries_data = [
+    {"name":"Mistérios Gozosos"},
+    {"name":"Mistérios Dolorosos"},
+    {"name":"Mistérios Gloriosos"},
+    {"name":"Mistérios Luminosos"},
+
+]
 
 function LoadPage() {
-    SelectMysteryOfTheDay();
+    mysteryOfTheDay = GetCurrentDayMysteryIndex();
+    updateMysteryOfTheDayButton();
 }
 
-function loadJson(jsonName, callback) {
-    fetch('./descriptions/' + jsonName + '.json')
-        .then((response) => response.json())
-        .then((json) => callback(json));
+function selectMystery(mysteryIndex){
+    selectedMystery = mysteryIndex;
+    updateMysteryContent(mysteryIndex);
+    hidePreSelection();
+    showMysteryContent();
 }
 
-function UpdatePageTitle(weekDay, mysteryOfTheDay = false) {
-    // gozosos = seg e sab
-    // dolorosos = ter e sex
-    // gloriosos = qua e dom
-    // luminosos = qui
 
-    var titles = document.getElementsByClassName("page-title");
-    var txt = "";
+function selectMysteryOfTheDay() {
+    selectMystery(mysteryOfTheDay);
+}
 
-    switch (weekDay) {
-        case 1: //seg
-        case 6: //sab
-            txt = "Mistérios Gozosos";
-            break;
-        case 2: //ter
-        case 5: //sex
-            txt = "Mistérios Dolorosos";
-            break;
-        case 3: //qua
-        case 0: //dom
-            txt = "Mistérios Gloriosos";
-            break;
-        case 4: //qui
-        default:
-            txt = "Mistérios Luminosos";
-    }
+function updateMysteryContent(mysteryIndex, isMysteryOfTheDay = false) {
+    const txt = mysteries_data[mysteryIndex].name;
 
-    console.log(txt);
-
-    document.querySelector(".daily_set>span").innerText = `(${txt})`;
     document.querySelector("#header_mistery_name").innerText = txt;
+
+    if(isMysteryOfTheDay){
+        document.querySelector(".daily_set>span").innerText = `(${txt})`;
+    }
 }
 
-function GetCurrentMysteryCode() {
+function updateMysteryOfTheDayButton(){
+    const txt = mysteries_data[mysteryOfTheDay].name;
+    document.querySelector(".daily_set>span").innerText = `(${txt})`;
+}
+
+function GetCurrentDayMysteryIndex() {
     const weekDay = new Date().getDay();
     // gozosos = seg e sab
     // dolorosos = ter e sex
     // gloriosos = qua e dom
     // luminosos = qui
 
-    return GetMysteryByWeekday(weekDay);
+    return GetMysteryIndexByWeekday(weekDay);
 }
 
-function GetMysteryByWeekday(weekDay) {
+function GetMysteryIndexByWeekday(weekDay) {
     switch (weekDay) {
         case 1: //seg
         case 6: //sab
-            return mysteries.joyful;
+            return 0;
         case 2: //ter 
         case 5: //sex
-            return mysteries.sorrowful;
+            return 1;
         case 3: //qua
         case 0: //dom
-            return mysteries.glorious;
+            return 2;
         case 4: //qui
         default:
-            return mysteries.luminous;
+            return 3;
 
     }
 }
 
-function GetMysteryDescriptionsByWeekday(weekDay) {
-    switch (weekDay) {
-        case 1: //seg
-        case 6: //sab
-            return loadJson("joyful-mysteries", UpdateDescriptions);
-        case 2: //ter 
-        case 5: //sex
-            return loadJson("sorrowful-mysteries", UpdateDescriptions);
-        case 3: //qua
-        case 0: //dom
-            return loadJson("glorious-mysteries", UpdateDescriptions);
-        case 4: //qui
-        default:
-            return loadJson("luminous-mysteries", UpdateDescriptions);
-    }
+function hidePreSelection(){
+    console.log("hide pre-selection");
+    document.querySelector("header").classList.remove("hidden");
+    document.querySelector(".pre-selection").classList.add("hidden");
 }
 
-function SelectMystery(weekDay) {
-    console.log(weekDay);
-    UpdatePageTitle(weekDay);
-    var url = baseUrl + GetMysteryByWeekday(weekDay);
-    document.getElementsByClassName('video-iframe')[0].src = url;
-    GetMysteryDescriptionsByWeekday(weekDay);
-    hideMenu();
-}
-
-function SelectMysteryOfTheDay() {
-    const weekDay = new Date().getDay();
-    console.log(weekDay);
-    UpdatePageTitle(weekDay, true);
-    var url = baseUrl + GetCurrentMysteryCode();
-    GetMysteryDescriptionsByWeekday(weekDay);
-    document.getElementsByClassName('video-iframe')[0].src = url;
-    hideMenu();
-}
-
-function showMenu() {
-    var menu = document.getElementById("overlay-menu");
-    menu.classList.remove("hidden");
-}
-
-function hideMenu() {
-    var menu = document.getElementById("overlay-menu");
-    menu.classList.add("hidden");
-}
-
-function openLink(url) {
-    window.open(url, '_blank').focus();
-
-}
-
-function UpdateDescriptions(data) {
-    console.log(data);
-    var desc = document.getElementById("mysteries-descriptions");
-    desc.innerHTML = "<h1>" + data.name + "</h1>";
-    let i = 1;
-    data.mysteries.forEach(m => {
-        desc.innerHTML += '<p class="mystery-title">' + i + 'º ' + data.prefix + ': ' + m.title + '</p>';
-        desc.innerHTML += "<p>" + m.description + "</p>";
-        desc.innerHTML += "<br>"
-        i++;
-    });
-    desc.innerHTML += "<a class='source' target='_blank' href='" + data.source + "'>Fonte</a>"
-    desc.scrollTop = 0;
-
+function showMysteryContent(){
+    console.log("show mystery content");
+    document.querySelector(".mystery-content").classList.remove("hidden");
 }

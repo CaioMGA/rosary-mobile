@@ -1,8 +1,4 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
     <head>
         <meta charset="utf-8">
@@ -11,14 +7,11 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="styles.css">
+        <script src="app.js" async defer></script>
     </head>
     <body onload="LoadPage();">
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
 
-        <!-- <header class="hidden"></header> -->
-        <header>
+        <header class="hidden">
             <h2 id="header_site_name">Reze o Santo Terço</h2>
             <h2 id="header_mistery_name">Mistérios Mistérios</h2>
             <a class="header_link" href="/v2">Home</a>
@@ -26,21 +19,24 @@
         <main class="pre-selection">
             <h1>Reze o Santo Terço <span><a id="old-site" href="#">Site Antigo</a></span></h1>
             <div class="sets_container">
-                <div class="specific_set_div"><button class="specific_set button_set">Mistérios Gozosos</button><p class="key_hint">[1]</p></div>
-                <div class="specific_set_div"><button class="specific_set button_set">Mistérios Dolorosos</button><p class="key_hint">[2]</p></div>
-                <div class="specific_set_div"><button class="specific_set button_set">Mistérios Gloriosos</button><p class="key_hint">[3]</p></div>
-                <div class="specific_set_div"><button class="specific_set button_set">Mistérios Luminosos</button><p class="key_hint">[4]</p></div>
+                <div class="specific_set_div"><button onclick="selectMystery(0)" class="specific_set button_set">Mistérios Gozosos</button><p class="key_hint">[1]</p></div>
+                <div class="specific_set_div"><button onclick="selectMystery(1)" class="specific_set button_set">Mistérios Dolorosos</button><p class="key_hint">[2]</p></div>
+                <div class="specific_set_div"><button onclick="selectMystery(2)" class="specific_set button_set">Mistérios Gloriosos</button><p class="key_hint">[3]</p></div>
+                <div class="specific_set_div"><button onclick="selectMystery(3)" class="specific_set button_set">Mistérios Luminosos</button><p class="key_hint">[4]</p></div>
             </div>
             
             <div class="sets_container">
-                <div class="daily_set_div"><button class="daily_set button_set">Mistérios do Dia<span>()</span></button><p class="key_hint">[Espaço]</p></div>
+                <div class="daily_set_div"><button onclick="selectMysteryOfTheDay()" class="daily_set button_set">Mistérios do Dia<span>()</span></button><p class="key_hint">[Espaço]</p></div>
 
                 <div class="help_button"><button class="help_button button_set">Ajuda</button><p class="key_hint">[?]</p></div>
             </div>
         </div>
             
         </main>
+
+        <main class="mystery-content hidden">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro incidunt provident sint temporibus aperiam perspiciatis alias vero nostrum unde nulla, magnam nobis dolorem adipisci animi blanditiis placeat ipsam voluptatibus eius quia nesciunt ipsa?</p>
+        </main>
         
-        <script src="app.js" async defer></script>
     </body>
 </html>

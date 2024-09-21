@@ -73,6 +73,8 @@ main {
     justify-content: center;
     width: 100dvw;
     min-height: 90dvh;
+    padding: 0 2rem;
+    box-sizing: border-box;
 }
 
 a {
