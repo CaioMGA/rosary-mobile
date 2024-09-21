@@ -1,0 +1,146 @@
+:root {
+    --branco-1: #FFFFFF;
+    --branco-2: #aaaaaa;
+    --amarelo-1: #FFF3A8;
+    --preto-1: #2A2D34;
+    --background-color: var(--preto-1);
+    --foreground-color: var(--branco-1);
+    --flair: var(--amarelo-1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.hidden{
+    display: none;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vdh;
+    background-color: var(--background-color);
+    color: var(--foreground-color);
+    font-size: 24px;
+}
+
+h1 {
+    font-size: 3rem;
+    line-height: 10rem;
+    color: var(--flair);
+}
+
+h1>span{
+    position: absolute;
+    margin-left: 1rem;
+}
+
+#header_site_name {
+    position: absolute;
+    left: 1rem;
+    top:0.5rem;
+    font-size: 1rem;
+    color: var(--branco-2);
+}
+
+#header_mistery_name {
+    font-size: 1rem;
+}
+
+header{
+    text-align: center;
+    margin-top:0.5rem;
+    font-size: 1rem;
+    width: 100%;
+    font-style: normal;
+}
+
+.header_link{
+    position: absolute;
+    right: 1rem;
+    top:0.5rem;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100dvw;
+    min-height: 90dvh;
+}
+
+a {
+    color: var(--branco-2);
+}
+
+.sets_container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 0.5rem 0;
+    width: 100%;
+    gap: 1rem;
+}
+
+.specific_set_div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+}
+
+.daily_set_div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+}
+
+.button_set{
+    height: 10dvh;
+    background-color: transparent;
+    color: var(--foreground-color);
+    font-size: 1rem;
+}
+
+.button_set:hover{
+    scale: 1.07;
+}
+
+.button_set>span{
+    font-size: .7rem;
+}
+
+.daily_set {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 35dvw;
+}
+
+.help_button{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1;
+    height: 9dvh;
+}
+
+.specific_set {
+    width: 90%;
+}
+
+#old-site {
+    font-size: 1rem;;
+}
