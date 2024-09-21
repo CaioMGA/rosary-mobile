@@ -1,9 +1,10 @@
 :root {
     --branco-1: #FFFFFF;
     --branco-2: #aaaaaa;
-    --amarelo-1: #FFF3A8;
-    --preto-1: #2A2D34;
-    --background-color: var(--preto-1);
+    --amarelo-1: #ffff88;
+    --preto-1: #121314;
+    --preto-2: #171819;
+    --background-color: var(--preto-2);
     --foreground-color: var(--branco-1);
     --flair: var(--amarelo-1);
 }
@@ -40,30 +41,42 @@ h1>span{
     margin-left: 1rem;
 }
 
-#header_site_name {
-    position: absolute;
-    left: 1rem;
-    top:0.5rem;
-    font-size: 1rem;
-    color: var(--branco-2);
-}
-
-#header_mistery_name {
-    font-size: 1rem;
-}
-
 header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
     text-align: center;
-    margin-top:0.5rem;
+    padding: 0.5rem 2rem;
     font-size: 1rem;
     width: 100%;
     font-style: normal;
+    box-sizing: border-box;
+    background-color: var(--preto-1);
+}
+
+
+#header_site_name {
+    display: inline;
+    font-size: 1rem;
+    color: var(--branco-2);
+    width: auto;
+    text-wrap: nowrap;
+    width:25%;
+    text-align: left;
+}
+
+#header_mistery_name {
+    display: inline-block;
+    font-size: 1rem;
+    width: 100%;
 }
 
 .header_link{
-    position: absolute;
-    right: 1rem;
-    top:0.5rem;
+    display: inline;
+    width:25%;
+    text-align: right;
+
 }
 
 main {
@@ -71,7 +84,7 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100dvw;
+    max-width: 800px;
     min-height: 90dvh;
     padding: 0 2rem;
     box-sizing: border-box;
@@ -127,7 +140,7 @@ a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 35dvw;
+    min-width: 16rem;
 }
 
 .help_button{
