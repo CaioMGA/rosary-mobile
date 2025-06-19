@@ -1,0 +1,457 @@
+:: StoryTitle
+Santo Rosário
+
+
+:: StoryData
+{
+  "ifid": "3AF7B5D9-68CE-4E66-91C0-1E7B20087FFF",
+  "format": "Harlowe",
+  "format-version": "3.3.9",
+  "start": "Início",
+  "zoom": 1
+}
+
+
+:: Ave-Maria {"position":"900,1125","size":"100,100"}
+(set: $ave_marias to $ave_marias + 1)
+# Mistérios $misterios
+{
+(if: $intro is 0) [
+## Intenções
+	(if: $ave_marias is 1)[
+		O anjo anunciou a Maria
+        E ela concebeu do Espírito Santo
+	]
+    (if: $ave_marias is 2)[
+		Eis aqui a escrava do Senhor
+        Faça-se em mim conforme a sua palavra
+	]
+    (if: $ave_marias is 3)[
+		O verbo se fez carne
+        E habitou entre nós
+	]
+]
+}
+### Ave Maria ($ave_marias)
+
+Ave Maria,  cheia de graça, o Senhor é convosco. Bendita sois Vós entre as mulheres, bendito é o fruto de Vosso ventre, Jesus. Santa Maria, Mãe de Deus, rogai por nós, pecadores, agora e na hora de nossa morte. Amém. 
+{
+(if: $ave_marias >= 3 and $intro is 0)[
+	(set: $intro to 1)
+    (set: $ave_marias to 0)
+    (if: $misterios is "Gozosos")[[Continuar|Gozosos]]
+    (if: $misterios is "Dolorosos")[[Continuar|Dolorosos]]
+    (if: $misterios is "Gloriosos")[[Continuar|Gloriosos]]
+    (if: $misterios is "Luminosos")[[Continuar|Luminosos]]
+]
+(else:)[
+	(if: $ave_marias >= 10) [
+    [[Continuar|Ladainha de Nossa Senhora]]
+    ]
+	 (else:)[[Continuar|Ave-Maria]]
+]
+}
+
+
+:: Credo {"position":"900,875","size":"100,100"}
+# Mistérios $misterios
+## Credo
+
+Creio em Deus Pai, todo-poderoso, Criador do céu e da terra;
+E em Jesus Cristo, um só seu Filho (seu único Filho), Nosso Senhor,
+Que foi concebido pelo poder do Espírito Santo, nasceu de Maria Virgem;
+Padeceu sob o poder de Pôncio Pilatos, foi crucificado, morto e sepultado;
+Desceu ao reino dos mortos, ressuscitou ao terceiro dia;
+Subiu ao Céu, está sentado à direita de Deus Pai todo-poderoso,
+De onde há de vir a julgar os vivos e os mortos.
+Creio no Espírito Santo,
+Na Santa Igreja Católica, na comunhão dos Santos,
+Na remissão dos pecados,
+Na ressurreição da carne,
+Na vida eterna.
+Amém.
+
+[[Continuar|Pai-Nosso]]
+
+
+:: Créditos {"position":"1050,450","size":"100,100"}
+# Créditos
+[[Início]]
+
+## Principal fonte
+Os Mistérios do Santo Rosário 
+<a href="https://www.vatican.va/special/rosary/documents/misteri_po.html" target="blank_">Link</a>
+---
+## Demais fontes
+Dia 5 - Ó meu Jesus, perdoai-nos e livrai-nos do fogo do inferno... | Fátima Stella Maris
+<a href="https://fatimastellamaris.com.br/dia-5-o-meu-jesus-perdoais-nos-e-livrai-nos-do-fogo-do-inferno/" target="blank_">Link</a>
+ 
+ Credo dos Apóstolos – Wikipédia, a enciclopédia livre
+  <a href="https://pt.wikipedia.org/wiki/Credo_dos_Ap%C3%B3stolos" target="blank_">Link</a>
+ 
+ Conheça a origem do Santo Rosário e aprenda a rezá-lo
+  <a href="https://formacao.cancaonova.com/igreja/catequese/origem-santo-rosario/" target="blank_">Link</a>
+ ---
+ 
+ [[Início]]
+
+
+:: Dolorosos {"position":"800,1300","size":"100,100"}
+{
+(set: $decada to $decada + 1)
+(set: $misterio_singular to (substring: $misterios, 1, (length of $misterios) - 1))
+
+## Mistérios $misterios
+(if: $decada is 1)[
+### $decadaº Mistério $misterio_singular: Agonia de Jesus no Horto
+«Retirou-se Jesus com eles para um lugar chamado Getsêmani e disse-lhes: "Assentai-vos aqui, enquanto eu vou ali orar". E, tomando consigo Pedro e os dois filhos de Zebedeu, começou a entristecer-se e a angustiar-se. Disse-lhes, então: "Minha alma está triste até a morte. Ficai aqui e vigiai comigo". Adiantou-se um pouco e, prostrando-se com a face por terra, assim rezou: "Meu Pai, se é possível, afasta de mim este cálice! Todavia não se faça o que eu quero, mas sim o que tu queres"» (Mt 26, 36-39).
+
+]
+
+(if: $decada is 2)[
+### $decadaº Mistério $misterio_singular: Flagelação de Jesus
+«Então lhes soltou Barrabás; mas a Jesus mandou açoitar, e o entregou para ser crucificado» (Mt 27,26).
+
+]
+
+(if: $decada is 3)[
+### $decadaº Mistério $misterio_singular: Coroação de Espinhos
+«Os soldados do governador conduziram Jesus para o pretório e rodearam-no com todo o pelotão. Arrancaram-lhe as vestes e colocaram-lhe um manto escarlate. Depois, trançaram uma coroa de espinhos, meteram-lha na cabeça e puseram-lhe na mão uma vara. Dobrando os joelhos diante dele, diziam com escárnio: "Salve, rei dos judeus!"» (Mt 27, 27-29).
+
+]
+
+(if: $decada is 4)[
+### $decadaº Mistério $misterio_singular: Jesus carregando a cruz no caminho do Calvário
+«Passava por ali certo homem de Cirene, chamado Simão, que vinha do campo, pai de Alexandre e de Rufo, e obrigaram-no a que lhe levasse a cruz. Conduziram Jesus ao lugar chamado Gólgota, que quer dizer lugar do crânio» (Mc 15, 21-22).
+
+]
+
+(if: $decada is 5)[
+### $decadaº Mistério $misterio_singular: Crucifixão e morte de Jesus
+«Chegados que foram ao lugar chamado Calvário, ali o crucificaram, como também os ladrões, um à direita e outro à esquerda. E Jesus dizia: "Pai, perdoa-lhes; porque não sabem o que fazem"...
+Era quase à hora sexta e em toda a terra houve trevas até a hora nona. Escureceu-se o sol e o véu do templo rasgou-se pelo meio. Jesus deu então um grande brado e disse: "Pai, nas tuas mãos entrego o meu espírito". E, dizendo isso, expirou» (Lc  23, 33-46).
+
+]
+
+(if: $decada is 6)[
+### $decadaª Década: intenções livres
+Ofereça esta década de maneira livre. Peça algo, agradeça por algo.
+
+]
+
+[[Continuar|Pai-Nosso]]
+
+}
+
+
+:: Ficha técnica {"position":"1050,325","size":"100,100"}
+##Ficha técnica
+Design / Programação: <a href="http://caiomga.com" target="blank">Caio Amaral</a>
+
+Site criado com <a href="http://twinery.org/" target="blank_">Twine</a>
+
+Código-fonte: 
+
+Revisão: N/A
+
+Consultoria: N/A
+
+
+:: Fim {"position":"900,1675","size":"100,100"}
+# Você concluiu o Santo Terço contemplando os Mistérios $misterios
+
+[[Início]]
+
+
+:: Gloriosos {"position":"1000,1300","size":"100,100"}
+{
+(set: $decada to $decada + 1)
+(set: $misterio_singular to (substring: $misterios, 1, (length of $misterios) - 1))
+
+## Mistérios $misterios
+(if: $decada is 1)[
+### $decadaº Mistério $misterio_singular: Ressurreição de Jesus
+«No primeiro dia da semana, muito cedo, dirigiram-se ao sepulcro com os aromas que haviam preparado. Acharam a pedra removida longe da abertura do sepulcro. Entraram, mas não encontraram o corpo do Senhor Jesus. Não sabiam elas o que pensar, quando apareceram em frente delas dois personagens com vestes resplandecentes. Como estivessem amedrontadas e voltassem o rosto para o chão, disseram-lhes eles: "Por que buscais entre os mortos aquele que está vivo? Não está aqui, mas ressuscitou"» (Lc 24, 1-6). 
+
+]
+
+(if: $decada is 2)[
+### $decadaº Mistério $misterio_singular: Ascensão de Jesus ao Céu
+«Depois que o Senhor Jesus lhes falou, foi levado ao céu e está sentado à direita de Deus» (Mc 16, 19). 
+
+]
+
+(if: $decada is 3)[
+### $decadaº Mistério $misterio_singular: Vinda do Espírito Santo sobre os Apóstolos
+«Chegando o dia de Pentecostes, estavam todos reunidos no mesmo lugar. De repente, veio do céu um ruído, como se soprasse um vento impetuoso, e encheu toda a casa onde estavam sentados. Apareceu-lhes então uma espécie de línguas de fogo que se repartiram e pousaram sobre cada um deles. Ficaram todos cheios do Espírito Santo e começaram a falar em línguas, conforme o Espírito Santo lhes concedia que falassem» (At 2, 1-4).
+
+]
+
+(if: $decada is 4)[
+### $decadaº Mistério $misterio_singular: Assunção de Maria
+«Por isto, desde agora, me proclamarão bem-aventurada todas as gerações, porque realizou em mim maravilhas aquele que é poderoso e cujo nome é Santo» (Lc 1, 48-49). 
+
+]
+
+(if: $decada is 5)[
+### $decadaº Mistério $misterio_singular: Coroação de Maria no Céu
+«Apareceu em seguida um grande sinal no céu: uma Mulher revestida do sol, a lua debaixo dos seus pés e na cabeça uma coroa de doze estrelas» (Ap 12, 1).   
+
+]
+
+(if: $decada is 6)[
+### $decadaª Década: intenções livres
+Ofereça esta década de maneira livre. Peça algo, agradeça por algo.
+
+]
+
+[[Continuar|Pai-Nosso]]
+
+}
+
+
+:: Gozosos {"position":"650,1300","size":"100,100"}
+(set: $decada to $decada + 1)
+(set: $ave_marias to 0)
+(set: $misterio_singular to (substring: $misterios, 1, (length of $misterios) - 1))
+{
+## Mistérios $misterios
+(if: $decada is 1)[
+### $decadaº Mistério $misterio_singular: Anunciação a Maria
+«No sexto mês, o anjo Gabriel foi enviado por Deus a uma cidade da Galiléia, chamada Nazaré,  a uma virgem desposada com um homem que se chamava José, da casa de Davi e o nome da virgem era Maria» (Lc 1, 26-27). 
+]
+
+(if: $decada is 2)[
+### $decadaº Mistério $misterio_singular: Visitação de Nossa Senhora a sua prima Isabel
+«Naqueles dias, Maria se levantou e foi às pressas às montanhas, a uma cidade de Judá. Entrou em casa de Zacarias e saudou Isabel. Ora, apenas Isabel ouviu a saudação de Maria, a criança estremeceu no seu seio; e Isabel ficou cheia do Espírito Santo. E exclamou em alta voz: "Bendita és tu entre as mulheres e bendito é o fruto do teu ventre"» (Lc 1, 39-42).
+]
+
+(if: $decada is 3)[
+### $decadaº Mistério $misterio_singular: Nascimento de Jesus
+«Naqueles tempos apareceu um decreto de César Augusto, ordenando o recenseamento de toda a terra. Este recenseamento foi feito antes do governo de Quirino, na Síria.  Todos iam alistar-se, cada um na sua cidade.  
+Também José subiu da Galiléia, da cidade de Nazaré, à Judéia, à Cidade de Davi, chamada Belém, porque era da casa e família de Davi,  para se alistar com a sua esposa Maria, que estava grávida.  Estando eles ali, completaram-se os dias dela.  
+E deu à luz seu filho primogênito, e, envolvendo-o em faixas, reclinou-o num presépio; porque não havia lugar para eles na hospedaria» (Lc 2,1-7).
+]
+
+(if: $decada is 4)[
+### $decadaº Mistério $misterio_singular: Apresentação do Menino Jesus no Templo
+«Completados que foram os oito dias para ser circuncidado o menino, foi-lhe posto o nome de Jesus, como lhe tinha chamado o anjo, antes de ser concebido no seio materno. Concluídos os dias da sua purificação segundo a Lei de Moisés, levaram-no a Jerusalém para o apresentar ao Senhor, conforme o que está escrito na lei do Senhor: Todo primogênito do sexo masculino será consagrado ao Senhor; e para oferecerem o sacrifício prescrito pela lei do Senhor, um par de rolas ou dois pombinhos.» (Lc 2, 21-24).
+]
+
+(if: $decada is 5)[
+### $decadaº Mistério $misterio_singular: Perda e encontro do Menino Jesus no Templo
+«Seus pais iam todos os anos a Jerusalém para a festa da Páscoa. Tendo ele atingido doze anos, subiram a Jerusalém, segundo o costume da festa. Acabados os dias da festa, quando voltavam, ficou o menino Jesus em Jerusalém, sem que os seus pais o percebessem...
+Três dias depois o acharam no templo, sentado no meio dos doutores, ouvindo-os e interrogando-os. Todos os que o ouviam estavam maravilhados da sabedoria de suas respostas» (Lc 2, 41-47)
+]
+
+(if: $decada is 6)[
+### $decadaª Década: intenções livres
+Ofereça esta década de maneira livre. Peça algo, agradeça por algo.
+]
+}
+
+
+[[Continuar|Pai-Nosso]]
+
+
+
+:: Intencoes {"position":"900,750","size":"100,100"}
+# Mistérios $misterios
+
+## Intenções
+
+Pelo sinal da Santa Cruz livrai-nos, Deus, nosso Senhor, de nossos inimigos.
+Em nome do Pai, do Filho e do Espírito Santo
+Amém.
+
+Divino Jesus, eu Vos ofereço este terço que vou rezar contemplando os mistérios da nossa redenção.
+
+Concedei pela intercessão de Maria, Vossa Mãe Santíssima, a quem me dirijo, as virtudes que me são necessárias para bem rezá-lo e as graças anexas a esta devoção.
+
+Ofereço-vos particularmente este Santo Terço pelos problemas mais urgentes do Brasil. Abençoai a família brasileira e dai-nos a paz.
+
+[[Continuar|Credo]]
+
+
+:: Início {"position":"900,375","size":"100,100"}
+(link:"v1")[(goto-url:"/v1")]
+# Santo Rosário
+
+O Rosário é composto por vinte "mistérios" (eventos, momentos significativos) da vida de Jesus e de Maria, divididos depois da Carta Apostólica Rosarium Virginis Mariae, em quatro Coroas.
+
+A primeira Coroa compreende os mistérios gozosos (segundas-feiras e sábados), a segunda os luminosos (quintas-feiras), a terceira os dolorosos (terças e sextas-feiras) e a quarta os gloriosos (quartas-feiras e domingos).
+
+«Esta indicação, porém, não pretende limitar uma certa liberdade de opção na meditação pessoal e comunitária, segundo as exigências espirituais e pastorais e sobretudo as coincidências litúrgicas que possam sugerir oportunas adaptações (Rosarium Virginis Mariae, n. 38) ».
+
+Para auxiliar o itinerário meditativo-contemplativo do Rosário, para cada "mistério" são apresentados dois textos de referência: o primeiro da Sagrada Escritura, e segundo do Catecismo da Igreja Católica.
+
+[[Rezar o santo Rosário]]
+[[Origem do Santo Rosário]]
+[[Créditos]]
+[[Ficha técnica]]
+
+
+:: Ladainha de Nossa Senhora {"position":"900,1425","size":"100,100"}
+## Glória
+
+Glória ao Pai, ao Filho e ao Espírito Santo.
+Como era no princípio, agora e sempre.
+Amém
+
+Ó, meu Jesus, perdoai-nos e livrai-nos do fogo do Inferno, levai as almas todas para o céu e socorrei principalmente os que mais precisam.
+{
+(if: $decada is 6) [
+[[Continuar|Salve-Regina]]
+]
+(else:)[
+	(if: $misterios is "Gozosos")[[Continuar|Gozosos]]
+    (if: $misterios is "Dolorosos")[[Continuar|Dolorosos]]
+    (if: $misterios is "Gloriosos")[[Continuar|Gloriosos]]
+    (if: $misterios is "Luminosos")[[Continuar|Luminosos]]
+]
+}
+
+
+:: Luminosos {"position":"1150,1300","size":"100,100"}
+{
+(set: $decada to $decada + 1)
+(set: $misterio_singular to (substring: $misterios, 1, (length of $misterios) - 1))
+
+## Mistérios $misterios
+(if: $decada is 1)[
+### $decadaº Mistério $misterio_singular: Batismo de Jesus no rio Jordão
+«Depois que Jesus foi batizado, saiu logo da água. Eis que os céus se abriram e viu descer sobre ele, em forma de pomba, o Espírito de Deus. E do céu baixou uma voz: "Eis meu Filho muito amado em quem ponho minha afeição"» (Mt 3,16-17).
+
+]
+
+(if: $decada is 2)[
+### $decadaº Mistério $misterio_singular: Auto-revelação de Jesus nas Bodas de Caná
+«Três dias depois, celebravam-se bodas em Caná da Galiléia, e achava-se ali a mãe de Jesus. Também foram convidados Jesus e os seus discípulos. Como viesse a faltar vinho, a mãe de Jesus disse-lhe: "Eles já não têm vinho". Respondeu-lhe Jesus: "Mulher, isso compete a nós? Minha hora ainda não chegou". Disse, então, sua mãe aos serventes: "Fazei o que ele vos disser"». (Jo 2, 1-5)
+
+]
+
+(if: $decada is 3)[
+### $decadaº Mistério $misterio_singular: Anúncio do Reino de Deus
+«Completou-se o tempo e o Reino de Deus está próximo; fazei penitência e crede no Evangelho». (Mc 1, 15)
+
+]
+
+(if: $decada is 4)[
+### $decadaº Mistério $misterio_singular: Transfiguração de Jesus
+«Seis dias depois, Jesus tomou consigo Pedro, Tiago e João, seu irmão, e conduziu-os à parte a uma alta montanha.Lá se transfigurou na presença deles: seu rosto brilhou como o sol, suas vestes tornaram-se resplandecentes de brancura» (Mt 17, 1-2).
+
+]
+
+(if: $decada is 5)[
+### $decadaº Mistério $misterio_singular: Instituição da Eucaristia
+«Durante a refeição, Jesus tomou o pão, benzeu-o, partiu-o e o deu aos discípulos, dizendo: "Tomai e comei, isto é meu corpo"» (Mt 26, 26).
+
+]
+
+(if: $decada is 6)[
+### $decadaª Década: intenções livres
+Ofereça esta década de maneira livre. Peça algo, agradeça por algo.
+
+]
+
+[[Continuar|Pai-Nosso]]
+
+}
+
+
+:: Mistérios Dolorosos {"position":"825,625","size":"100,100"}
+# Mistérios Dolorosos
+
+(set: $misterios to "Dolorosos")
+
+[[Começar|Intencoes]]
+
+
+:: Mistérios Gloriosos {"position":"1125,625","size":"100,100"}
+# Mistérios Gloriosos
+
+(set: $misterios to "Gloriosos")
+
+[[Começar|Intencoes]]
+
+
+:: Mistérios Gozosos {"position":"675,625","size":"100,100"}
+(set: $misterios to "Gozosos")
+
+# Mistérios $misterios
+
+[[Começar|Intencoes]]
+
+
+:: Mistérios Luminosos {"position":"975,625","size":"100,100"}
+# Mistérios Luminosos
+
+(set: $misterios to "Luminosos")
+
+[[Começar|Intencoes]]
+
+
+:: Origem do Santo Rosário {"position":"750,450","size":"100,100"}
+## Origem do Santo Rosário
+[[Início]]
+A origem do Rosário, segundo a tradição, está no costume dos antigos monges, de fazer suas preces, contando-as com o uso dos dedos das mãos ou mediante pedrinhas ou grãos. Na Idade Média (séculos X-XII), os fiéis costumavam rezar vários “Pais-Nossos” ou várias “Ave-Marias” consecutivos, quando não conseguiam recitar os 150 Salmos. Essa prática foi-se codificando e regulamentando aos poucos, chegando a sua forma atual no século XVI sob o Papa São Pio V (1566-1572), dominicano. Foi esse Pontífice quem determinou tanto o número de “Pai-Nosso” e “Ave-Maria” como o teor dos mistérios que os devem acompanhar.
+
+São Pio V atribuiu a eficácia dessa prece à vitória naval de Lepanto, que, aos 7 de outubro de 1571, salvou de grande perigo a Cristandade ocidental contra a invasão dos turcos otomanos, muçulmanos, que pretendiam dominar a Europa e acabar com o cristianismo. Por isso, o Papa São Pio V instituiu a festa de Nossa Senhora do Rosário em 7 de outubro. A devoção foi mais e mais favorecida pelos Papas seguintes, destacando-se Leão XIII, que determinou fosse o mês de outubro dedicado, em todas as paróquias, à reza do Rosário.
+
+### A origem do Santo Rosário
+
+### Rosário como arma para a conversão
+Uma forte tradição na Igreja diz que São Domingos de Gusmão, enviado pelo Papa Gregório IX (1227-1241), para converter os hereges cátaros na França, recebeu a visita de Nossa Senhora, que lhe apresentou o Rosário como a arma para a conversão dos hereges. São Domingos caminhava rezando o Rosário e pregando a sã doutrina da fé.
+
+Há muito tempo, os papas valorizam e recomendam, vivamente, a oração do Rosário, especialmente os últimos papas, sobretudo a partir das aparições de Lourdes (1858) e Fátima (1917). Em Fátima, Nossa Senhora disse aos pastorinhos que “não há problema de ordem pessoal, familiar e nacional que a oração do Terço não possa ajudar a resolver”.
+
+''Leão XIII (''1878-1903), em tempos difíceis, dedicou ao Rosário 16 documentos, sendo 11 encíclicas e uma constituição apostólica; Paulo VI dedicou três documentos ao Rosário; uma encíclica: Mense (29 de Abril de 1965), a qual recorda que “Maria é caminho para Cristo, e isso significa que o recurso contínuo a ela exige que se procure nela, para ela e com ela, Cristo Salvador, ao qual nos devemos dirigir sempre”.
+
+Na carta apostólica de João Paulo II Rosarium Virginis Mariae, ele declara: “Percorrer com ela [Maria] as cenas do Rosário é como frequentar ‘escola’ de Maria para ler Cristo, penetrar nos seus segredos, compreender a sua mensagem”. É a minha oração predileta, disse João Paulo II.
+
+“É a oração mais querida pela Mãe de Deus”
+Em 10 outubro 2010, o Papa Bento XVI disse que o Rosário é “a oração mais querida pela Mãe de Deus, e que conduz, diretamente, a Cristo”. “O Rosário é uma oração bíblica, totalmente tecida pela Sagrada Escritura. É uma oração do coração, em que a repetição da ‘Ave-Maria’ orienta o pensamento e o afeto para Cristo. É oração que ajuda a meditar a Palavra de Deus e a assimilar a Comunhão Eucarística sob o modelo de Maria, que guardava, em seu coração, tudo aquilo que Jesus fazia e dizia, e sua própria presença. A “Virgem do Rosário” recomendou, com insistência, a oração do Rosário todos os dias, para alcançar o fim da guerra.
+
+O Catecismo diz: “A oração cristã procura, de preferência, meditar os mistérios de Cristo, como na lectio divina ou no Rosário”. (n.2708)
+
+## São João Paulo II
+São João Paulo II disse, na Carta Apostólica Rosarium Virginis Mariae, em 16 de outubro de 2002, no Ano do Rosário: “Em momentos em que estivera ameaçada a própria cristandade, foi à força dessa oração que se atribuiu a libertação do perigo, tendo a Virgem do Rosário sido saudada como propiciadora da salvação. O Rosário da Virgem Maria (Rosarium Virginis Mariae), que ao sopro do Espírito de Deus se foi formando, gradualmente, no segundo Milênio, é oração amada por numerosos santos e estimulada pelo Magistério. Na sua simplicidade e profundidade, permanece, mesmo no Terceiro Milênio recém iniciado, uma oração de grande significado e destinada a produzir frutos de santidade. Mediante o Rosário, o crente alcança a graça em abundância, como se a recebesse das mesmas mãos da Mãe do Redentor”.
+
+“Desde a minha juventude, essa oração teve um lugar importante na minha vida espiritual. A ele confiei tantas preocupações; nele, encontrei sempre conforto. Vinte e quatro anos atrás, no dia 29 de outubro de 1978, apenas duas semanas depois da minha eleição para a Sé de Pedro, quase numa confidência, assim me exprimia: «O Rosário é a minha oração predileta. Oração maravilhosa! Maravilhosa na simplicidade e na profundidade. […] Hoje, no início do vigésimo quinto ano de serviço como Sucessor de Pedro, desejo fazer o mesmo. Quantas graças recebi, nesses anos da Virgem Santa, por meio do Rosário. Com efeito, recitar o Rosário nada mais é senão contemplar com Maria o rosto de Cristo”.
+
+<a href="https://formacao.cancaonova.com/igreja/catequese/origem-santo-rosario/" target="blank_">Fonte</a>
+
+[[Início]]
+
+
+:: Pai-Nosso {"position":"900,1000","size":"100,100"}
+# Mistérios $misterios
+## Pai-Nosso
+
+Pai Nosso, que estais no céu, santificado seja o Vosso Nome, venha a nós o Vosso Reino, seja feita a Vossa Vontade, assim na terra como no céu. O pão nosso de cada dia nos dai hoje, perdoai-nos as nossas ofensas, assim como nós perdoamos a quem nos tenha ofendido. E não nos deixeis cair em tentação, mas livrai-nos do mal. Amém.
+
+[[Continuar|Ave-Maria]]
+
+
+:: Rezar o santo Rosário {"position":"900,500","size":"100,100"}
+(set: $intro to 0)
+(set: $ave_marias to 0)
+(set: $decada to 0)
+# Rezar o Santo Rosário
+
+[[Mistérios Gozosos]] Segundas e Sábados
+[[Mistérios Dolorosos]] Terças e Sextas
+[[Mistérios Gloriosos]] Quartas e Domingos
+[[Mistérios Luminosos]] Quintas
+
+
+:: Salve-Regina {"position":"900,1550","size":"100,100"}
+# Salve Rainha
+
+Salve Rainha, Mãe de Misericórdia, vida, doçura e esperança nossa, salve! A Vós bradamos, os degredados filhos de Eva. A Vós suspiramos, gemendo e chorando neste vale de lágrimas.
+Eia, pois, Advogada nossa, esses Vossos olhos misericordiosos a nós volvei, e, depois deste desterro, mostrai-nos a Jesus, bendito fruto de Vosso ventre, ó clemente, ó piedosa, ó doce sempre Virgem Maria.
+Rogai por nós, santa Mãe de Deus,
+Para que sejamos dignos das promessas de Cristo.
+Amém. 
+
+[[Fim]]
